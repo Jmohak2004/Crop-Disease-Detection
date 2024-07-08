@@ -1,11 +1,11 @@
- # Importing all the libraries required for training
- #  Paste the kaggle database link here ******************************************************************************** 
+#Importing Dataset
+#Dataset Link:- https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
 
-import tensorflow as tef
+
+ # Importing all the libraries required for training
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-
 import tensorflow as tf
 
 # Defining parameters
@@ -126,6 +126,25 @@ history = cnn.fit(
 results = cnn.evaluate(validation_set)
 print(f"Validation Loss: {results[0]}, Validation Accuracy: {results[1]}")
 
+#Training set Accuracy
+train_loss, train_acc = cnn.evaluate(training_set)
+print('Training accuracy:', train_acc)
+
+#Validating set Accuracy
+val_loss, val_acc = cnn.evaluate(validation_set)
+print('Validation accuracy:', val_acc)
+
+#Saving the training Module
+cnn.save('trained_plant_disease_model.keras')
+
+#Accuracy Visulization using graph
+epochs = [i for i in range(1,11)]
+plt.plot(epochs,training_history.history['accuracy'],color='yellow',label='Training Accuracy')
+plt.plot(epochs,training_history.history['val_accuracy'],color='green',label='Validation Accuracy')
+plt.xlabel('No. of Epochs')
+plt.title('Visualization of Accuracy Result')
+plt.legend()
+plt.show()
 
 
 
