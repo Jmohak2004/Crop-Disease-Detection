@@ -1,8 +1,7 @@
 #Importing Dataset
 #Dataset Link:- https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
 
-
- # Importing all the libraries required for training
+# Importing all the libraries required for training
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
