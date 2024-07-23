@@ -124,7 +124,7 @@ history = cnn.fit(
 # Evaluate the model
 results = cnn.evaluate(validation_set)
 print(f"Validation Loss: {results[0]}, Validation Accuracy: {results[1]}")
-
+   
 #Training set Accuracy
 train_loss, train_acc = cnn.evaluate(training_set)
 print('Training accuracy:', train_acc)
@@ -144,6 +144,12 @@ plt.xlabel('No. of Epochs')
 plt.title('Visualization of Accuracy Result')
 plt.legend()
 plt.show()
+
+
+
+
+
+
 
 
 
